@@ -347,7 +347,7 @@ export default function Component() {
     I am a Pre-Final year student at IIT (ISM) Dhanbad, pursuing Engineering. With a deep-seated passion for full-stack development, I have honed my skills in the MERN stack, and my expertise extends across Next.js and Node.js, reinforced by a solid foundation in C, C++, Data Structures and Algorithms.
   </p>
   <p className="text-lg text-slate-300">
-    My journey has been marked by impactful projects like the SESE Website, where I led a team to build a dynamic platform, and achievements such as winning the Internal Smart India Hackathon. I am also building a startup platform, "Connecting Generations," a virtual campus bridging college, alumni, and students. I am driven by innovation, constantly seeking new challenges and ways to create meaningful tech solutions.
+    My journey has been marked by impactful projects like the SESE Website, where I led a team to build a dynamic platform, and achievements such as winning the Internal Smart India Hackathon. I am also building a startup platform, Connecting Generations, a virtual campus bridging college, alumni, and students. I am driven by innovation, constantly seeking new challenges and ways to create meaningful tech solutions.
   </p>
 </div>
 
