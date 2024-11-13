@@ -14,7 +14,8 @@ const skills = [
   { name: "React", level: 90 },
   { name: "Node.js", level: 85 },
   { name: "TypeScript", level: 80 },
-  { name: "GraphQL", level: 75 },
+  { name: "JavaScript", level: 90 },
+
   { name: "Next.js", level: 85 },
   { name: "TailwindCSS", level: 90 },
   { name: "MongoDB", level: 80 },
@@ -27,16 +28,16 @@ const projects = [
     description: "A comprehensive mental health platform featuring video calling, AI-powered chatbot, and community support.",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%20(362)-GrB6vKWIS2ypNrFhO6sEMw6WC7zI7R.png",
     technologies: ["Next.js", "TailwindCSS", "WebRTC", "AI/ML"],
-    github: "https://github.com/anishiit",
-    demo: "#"
+    github: "https://github.com/anishiit/chat-frontend",
+    demo: "https://unrivaled-melba-047ef2.netlify.app/"
   },
   {
-    title: "IIT Dhanbad Alumni Portal",
+    title: "Alumni Portal",
     description: "A platform connecting alumni with their alma mater, featuring event management and networking capabilities.",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%20(361)-u4RG3NfZgcfvSZ0mHfx5htQ0Stk6gh.png",
     technologies: ["React", "Node.js", "MongoDB", "Express"],
-    github: "https://github.com/anishiit",
-    demo: "#"
+    github: "https://github.com/anishiit/alumniportal",
+    demo: "https://aluminiportal.vercel.app/"
   },
   {
     title: "SESE Website",
@@ -44,7 +45,7 @@ const projects = [
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%20(363)-WNf6QE0wMDlNg6aMNn7rkRmE8WovpH.png",
     technologies: ["Next.js", "TailwindCSS", "MongoDB", "Express"],
     github: "https://github.com/anishiit",
-    demo: "#"
+    demo: "https://sese-eight.vercel.app/"
   }
 ]
 
@@ -341,27 +342,24 @@ export default function Component() {
       >
         <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 mb-8">About Me</h2>
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-4">
-            <p className="text-lg text-slate-300">
-              I am a passionate full-stack developer with a keen interest in emerging technologies. 
-              With a strong foundation in the MERN stack, I have expanded my expertise to include AI, 
-              blockchain, and AR/VR development.
-            </p>
-            <p className="text-lg text-slate-300">
-              I thrive on challenges and am constantly exploring new ways to push the boundaries of 
-              what is possible in tech. My goal is to create innovative solutions that make a real 
-              impact in the world.
-            </p>
-          </div>
+        <div className="space-y-4">
+  <p className="text-lg text-slate-300">
+    I am a Pre-Final year student at IIT (ISM) Dhanbad, pursuing Engineering. With a deep-seated passion for full-stack development, I have honed my skills in the MERN stack, and my expertise extends across Next.js and Node.js, reinforced by a solid foundation in C, C++, Data Structures and Algorithms.
+  </p>
+  <p className="text-lg text-slate-300">
+    My journey has been marked by impactful projects like the SESE Website, where I led a team to build a dynamic platform, and achievements such as winning the Internal Smart India Hackathon. I am also building a startup platform, "Connecting Generations," a virtual campus bridging college, alumni, and students. I am driven by innovation, constantly seeking new challenges and ways to create meaningful tech solutions.
+  </p>
+</div>
+
           <InteractiveCard>
             <Card className="bg-slate-800 border-purple-500">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">Quick Facts</h3>
                 <ul className="space-y-2 text-slate-300">
-                  <li>🎓 MSc in Computer Science</li>
-                  <li>💼 5+ years of industry experience</li>
-                  <li>🌟 Open-source contributor</li>
+                  <li>🎓 Student at IIT Dhanbad</li>
+                  <li>🌱 Founder of SESE tech, leading tech initiatives</li>
                   <li>🏆 Multiple hackathon winner</li>
+                  <li>🌟 1500+ contributions on GitHub</li>
                   <li>📚 Continuous learner and tech enthusiast</li>
                 </ul>
               </CardContent>
@@ -497,13 +495,13 @@ export default function Component() {
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild className="w-full md:w-auto border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white">
-              <Link href="#">
+              <Link href="https://www.linkedin.com/in/anish-kumar-singh-19091b25b/?originalSubdomain=in">
                 <Linkedin className="w-5 h-5 mr-2" />
                 LinkedIn
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild className="w-full md:w-auto border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white">
-              <Link href="mailto:contact@example.com">
+              <Link href="mailto:anishsingh74850@gmail.com">
                 <Mail className="w-5 h-5 mr-2" />
                 Email
               </Link>
