@@ -343,13 +343,13 @@ export default function Component() {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4">
             <p className="text-lg text-slate-300">
-              I'm a passionate full-stack developer with a keen interest in emerging technologies. 
-              With a strong foundation in the MERN stack, I've expanded my expertise to include AI, 
+              I am a passionate full-stack developer with a keen interest in emerging technologies. 
+              With a strong foundation in the MERN stack, I have expanded my expertise to include AI, 
               blockchain, and AR/VR development.
             </p>
             <p className="text-lg text-slate-300">
               I thrive on challenges and am constantly exploring new ways to push the boundaries of 
-              what's possible in tech. My goal is to create innovative solutions that make a real 
+              what is possible in tech. My goal is to create innovative solutions that make a real 
               impact in the world.
             </p>
           </div>
@@ -486,7 +486,7 @@ export default function Component() {
         <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 mb-8">Get In Touch</h2>
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-lg text-slate-300 mb-8">
-            I'm always open to new opportunities, collaborations, or just a friendly chat about tech. 
+            I am always open to new opportunities, collaborations, or just a friendly chat about tech. 
             Feel free to reach out through any of the channels below:
           </p>
           <div className="flex flex-col md:flex-row justify-center gap-6">
