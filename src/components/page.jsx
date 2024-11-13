@@ -3,12 +3,13 @@
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { motion, useScroll, useTransform, useSpring, useAnimation, AnimatePresence } from "framer-motion"
-import { Github, Linkedin, Mail, ExternalLink, ChevronDown, Code, Briefcase, User, Menu, X } from "lucide-react"
+import { motion, useScroll, useSpring, useAnimation } from "framer-motion";
+import { Github, Linkedin, ExternalLink, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { EnvelopeClosedIcon, ChevronDownIcon } from "@radix-ui/react-icons";
 
 const skills = [
   { name: "React", level: 90 },
@@ -23,34 +24,34 @@ const skills = [
 
 const projects = [
   {
-    title: "TheraWin - Mental Health Platform",
-    description: "A comprehensive mental health platform featuring video calling, AI-powered chatbot, and community support.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%20(362)-GrB6vKWIS2ypNrFhO6sEMw6WC7zI7R.png",
-    technologies: ["Next.js", "TailwindCSS", "WebRTC", "AI/ML"],
-    github: "https://github.com/anishiit",
-    demo: "#"
+    title: "AI-Powered Personal Assistant",
+    description: "A voice-activated personal assistant using natural language processing and machine learning.",
+    image: "/placeholder.svg",
+    technologies: ["Python", "TensorFlow", "React Native", "AWS"],
+    github: "#",
+    demo: "#",
   },
   {
-    title: "IIT Dhanbad Alumni Portal",
-    description: "A platform connecting alumni with their alma mater, featuring event management and networking capabilities.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%20(361)-u4RG3NfZgcfvSZ0mHfx5htQ0Stk6gh.png",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    github: "https://github.com/anishiit",
-    demo: "#"
+    title: "Decentralized Finance Platform",
+    description: "A blockchain-based DeFi platform for lending, borrowing, and yield farming.",
+    image: "/placeholder.svg",
+    technologies: ["Solidity", "Web3.js", "React", "Ethereum"],
+    github: "#",
+    demo: "#",
   },
   {
-    title: "SESE Website",
-    description: "Official website for the Society of Environmental Science and Engineers, featuring academic resources and event management.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%20(363)-WNf6QE0wMDlNg6aMNn7rkRmE8WovpH.png",
-    technologies: ["Next.js", "TailwindCSS", "MongoDB", "Express"],
-    github: "https://github.com/anishiit",
-    demo: "#"
-  }
+    title: "Real-time Collaborative Workspace",
+    description: "A virtual workspace for remote teams with real-time collaboration features.",
+    image: "/placeholder.svg",
+    technologies: ["Next.js", "Socket.io", "WebRTC", "MongoDB"],
+    github: "#",
+    demo: "#",
+  },
 ]
 
 const BackgroundAnimation = () => {
   return (
-    <div className="fixed inset-0 -z-10">
+    (<div className="fixed inset-0 -z-10">
       <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -68,8 +69,7 @@ const BackgroundAnimation = () => {
             scale: [1, 2, 1],
             opacity: [1, 0.5, 1],
             transition: { duration: 5, repeat: Infinity },
-          }}
-        />
+          }} />
         <motion.circle
           cx="90%"
           cy="90%"
@@ -79,8 +79,7 @@ const BackgroundAnimation = () => {
             scale: [1, 1.5, 1],
             opacity: [1, 0.7, 1],
             transition: { duration: 7, repeat: Infinity },
-          }}
-        />
+          }} />
         <motion.path
           d="M0,50 Q25,25 50,50 T100,50"
           fill="none"
@@ -93,30 +92,28 @@ const BackgroundAnimation = () => {
               "M0,50 Q25,25 50,50 T100,50",
             ],
             transition: { duration: 10, repeat: Infinity },
-          }}
-        />
+          }} />
       </svg>
-    </div>
-  )
+    </div>)
+  );
 }
 
 const AnimatedText = ({ text, className = "" }) => {
   const words = text.split(" ")
   return (
-    <motion.div className={`flex flex-wrap justify-center ${className}`}>
+    (<motion.div className={`flex flex-wrap justify-center ${className}`}>
       {words.map((word, index) => (
         <motion.span
           key={index}
           className="mr-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-        >
+          transition={{ duration: 0.5, delay: index * 0.1 }}>
           {word}
         </motion.span>
       ))}
-    </motion.div>
-  )
+    </motion.div>)
+  );
 }
 
 const InteractiveCard = ({ children }) => {
@@ -142,7 +139,7 @@ const InteractiveCard = ({ children }) => {
   }
 
   return (
-    <motion.div
+    (<motion.div
       ref={cardRef}
       className="card-container perspective-1000"
       onMouseMove={handleMouseMove}
@@ -150,11 +147,10 @@ const InteractiveCard = ({ children }) => {
       style={{
         transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
         transition: "transform 0.1s ease-out",
-      }}
-    >
+      }}>
       {children}
-    </motion.div>
-  )
+    </motion.div>)
+  );
 }
 
 const ScrollIndicator = () => {
@@ -165,7 +161,11 @@ const ScrollIndicator = () => {
     restDelta: 0.001,
   })
 
-  return <motion.div className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 z-50" style={{ scaleX }} />
+  return (
+    <motion.div
+      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 z-50"
+      style={{ scaleX }} />
+  );
 }
 
 const scrollToSection = (sectionId) => {
@@ -175,7 +175,7 @@ const scrollToSection = (sectionId) => {
   }
 };
 
-export default function Component() {
+export function BlockPage() {
   const [activeSection, setActiveSection] = useState("home")
   const controls = useAnimation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -214,27 +214,28 @@ export default function Component() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-slate-100">
+    (<div
+      className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-slate-100">
       <BackgroundAnimation />
       <ScrollIndicator />
-
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-40 bg-opacity-80 backdrop-blur-md bg-slate-900">
+      <nav
+        className="fixed top-0 left-0 right-0 z-40 bg-opacity-80 backdrop-blur-md bg-slate-900">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Link href="#" className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">AKS</Link>
+              transition={{ duration: 0.5 }}>
+              <Link
+                href="#"
+                className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">AKS</Link>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="hidden md:flex space-x-4"
-            >
+              className="hidden md:flex space-x-4">
               {["home", "about", "skills", "projects", "contact"].map((section) => (
                 <Button
                   key={section}
@@ -244,8 +245,7 @@ export default function Component() {
                     scrollToSection(section);
                     setActiveSection(section);
                     if (isMenuOpen) setIsMenuOpen(false);
-                  }}
-                >
+                  }}>
                   {section.charAt(0).toUpperCase() + section.slice(1)}
                 </Button>
               ))}
@@ -267,8 +267,7 @@ export default function Component() {
                         scrollToSection(section);
                         setActiveSection(section);
                         setIsMenuOpen(false);
-                      }}
-                    >
+                      }}>
                       {section.charAt(0).toUpperCase() + section.slice(1)}
                     </Button>
                   ))}
@@ -278,44 +277,46 @@ export default function Component() {
           </div>
         </div>
       </nav>
-
       {/* Hero Section */}
-      <section id="home" className="container mx-auto px-4 pt-32 pb-24 min-h-screen flex flex-col justify-center items-center text-center relative">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={controls}
-          className="space-y-6"
-        >
+      <section
+        id="home"
+        className="container mx-auto px-4 pt-32 pb-24 min-h-screen flex flex-col justify-center items-center text-center relative">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={controls} className="space-y-6">
           <div className="relative w-48 h-48 mx-auto mb-8">
             <Image
-              src="https://res.cloudinary.com/dcqgytpzz/image/upload/v1730562849/PROFILE_oarys0.jpg"
+              src="/placeholder.svg"
               alt="Anish Kumar Singh"
               fill
               className="rounded-full object-cover border-4 border-purple-500"
-              priority
-            />
+              priority />
           </div>
           <AnimatedText text="Anish Kumar Singh" className="text-4xl md:text-6xl font-bold" />
-          <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+          <h1
+            className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
             Full-Stack Innovator
           </h1>
-          <AnimatedText 
-            text="Crafting cutting-edge solutions at the intersection of AI, blockchain, and web technologies" 
-            className="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto"
-          />
+          <AnimatedText
+            text="Crafting cutting-edge solutions at the intersection of AI, blockchain, and web technologies"
+            className="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto" />
           <motion.div
             className="flex gap-4 justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-            <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600">
+            transition={{ duration: 0.5, delay: 0.5 }}>
+            <Button
+              asChild
+              size="lg"
+              className="bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600">
               <Link href="#contact">
-                <Mail className="w-5 h-5 mr-2" />
+                <EnvelopeClosedIcon className="w-5 h-5 mr-2" />
                 Get in Touch
               </Link>
             </Button>
-            <Button variant="outline" size="lg" asChild className="border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white">
+            <Button
+              variant="outline"
+              size="lg"
+              asChild
+              className="border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white">
               <Link href="#projects">View Projects</Link>
             </Button>
           </motion.div>
@@ -324,12 +325,10 @@ export default function Component() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 1 }}
-          className="absolute bottom-8"
-        >
-          <ChevronDown className="w-8 h-8 animate-bounce text-purple-500" />
+          className="absolute bottom-8">
+          <ChevronDownIcon className="w-8 h-8 animate-bounce text-purple-500" />
         </motion.div>
       </section>
-
       {/* About Section */}
       <motion.section
         id="about"
@@ -337,9 +336,9 @@ export default function Component() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 mb-8">About Me</h2>
+        viewport={{ once: true }}>
+        <h2
+          className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 mb-8">About Me</h2>
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4">
             <p className="text-lg text-slate-300">
@@ -356,7 +355,8 @@ export default function Component() {
           <InteractiveCard>
             <Card className="bg-slate-800 border-purple-500">
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">Quick Facts</h3>
+                <h3
+                  className="text-xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">Quick Facts</h3>
                 <ul className="space-y-2 text-slate-300">
                   <li>🎓 MSc in Computer Science</li>
                   <li>💼 5+ years of industry experience</li>
@@ -369,7 +369,6 @@ export default function Component() {
           </InteractiveCard>
         </div>
       </motion.section>
-
       {/* Skills Section */}
       <motion.section
         id="skills"
@@ -377,9 +376,9 @@ export default function Component() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="text-3xl font-bold text-transparent  bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 mb-8">Skills & Expertise</h2>
+        viewport={{ once: true }}>
+        <h2
+          className="text-3xl font-bold text-transparent  bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 mb-8">Skills & Expertise</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skills.map((skill, index) => (
             <motion.div
@@ -387,13 +386,13 @@ export default function Component() {
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
+              viewport={{ once: true }}>
               <InteractiveCard>
                 <Card className="bg-slate-800 border-purple-500">
                   <CardContent className="p-6">
                     <div className="flex justify-between items-center mb-2">
-                      <h3 className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">{skill.name}</h3>
+                      <h3
+                        className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">{skill.name}</h3>
                       <span className="text-sm text-slate-300">{skill.level}%</span>
                     </div>
                     <div className="w-full bg-slate-700 rounded-full h-2.5">
@@ -402,8 +401,7 @@ export default function Component() {
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         transition={{ duration: 1, delay: 0.5 }}
-                        viewport={{ once: true }}
-                      />
+                        viewport={{ once: true }} />
                     </div>
                   </CardContent>
                 </Card>
@@ -412,7 +410,6 @@ export default function Component() {
           ))}
         </div>
       </motion.section>
-
       {/* Projects Section */}
       <motion.section
         id="projects"
@@ -420,9 +417,9 @@ export default function Component() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 mb-8">Featured Projects</h2>
+        viewport={{ once: true }}>
+        <h2
+          className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 mb-8">Featured Projects</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
@@ -430,20 +427,16 @@ export default function Component() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              viewport={{ once: true }}
-            >
+              viewport={{ once: true }}>
               <InteractiveCard>
-                <Card className="bg-slate-800 border-purple-500 overflow-hidden h-full flex flex-col">
-                  <div className="relative aspect-video">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover"
-                    />
+                <Card
+                  className="bg-slate-800 border-purple-500 overflow-hidden h-full flex flex-col">
+                  <div className="relative h-48">
+                    <Image src={project.image} alt={project.title} fill className="object-cover" />
                   </div>
                   <CardContent className="p-6 flex-grow flex flex-col">
-                    <h3 className="text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">{project.title}</h3>
+                    <h3
+                      className="text-2xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">{project.title}</h3>
                     <p className="text-slate-300 mb-4 flex-grow">{project.description}</p>
                     <div className="flex gap-2 flex-wrap mb-4">
                       {project.technologies.map((tech) => (
@@ -453,13 +446,20 @@ export default function Component() {
                       ))}
                     </div>
                     <div className="flex gap-4">
-                      <Button variant="outline" size="sm" asChild className="border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        asChild
+                        className="border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white">
                         <Link href={project.github}>
                           <Github className="w-4 h-4 mr-2" />
                           Code
                         </Link>
                       </Button>
-                      <Button size="sm" asChild className="bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600">
+                      <Button
+                        size="sm"
+                        asChild
+                        className="bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600">
                         <Link href={project.demo}>
                           <ExternalLink className="w-4 h-4 mr-2" />
                           Live Demo
@@ -473,7 +473,6 @@ export default function Component() {
           ))}
         </div>
       </motion.section>
-
       {/* Contact Section */}
       <motion.section
         id="contact"
@@ -481,43 +480,54 @@ export default function Component() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 mb-8">Get In Touch</h2>
+        viewport={{ once: true }}>
+        <h2
+          className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500 mb-8">Get In Touch</h2>
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-lg text-slate-300 mb-8">
             I'm always open to new opportunities, collaborations, or just a friendly chat about tech. 
             Feel free to reach out through any of the channels below:
           </p>
           <div className="flex flex-col md:flex-row justify-center gap-6">
-            <Button variant="outline" size="lg" asChild className="w-full md:w-auto border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white">
+            <Button
+              variant="outline"
+              size="lg"
+              asChild
+              className="w-full md:w-auto border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white">
               <Link href="https://github.com/anishiit">
                 <Github className="w-5 h-5 mr-2" />
                 GitHub
               </Link>
             </Button>
-            <Button variant="outline" size="lg" asChild className="w-full md:w-auto border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white">
+            <Button
+              variant="outline"
+              size="lg"
+              asChild
+              className="w-full md:w-auto border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white">
               <Link href="#">
                 <Linkedin className="w-5 h-5 mr-2" />
                 LinkedIn
               </Link>
             </Button>
-            <Button variant="outline" size="lg" asChild className="w-full md:w-auto border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white">
+            <Button
+              variant="outline"
+              size="lg"
+              asChild
+              className="w-full md:w-auto border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white">
               <Link href="mailto:contact@example.com">
-                <Mail className="w-5 h-5 mr-2" />
+                <EnvelopeClosedIcon className="w-5 h-5 mr-2" />
                 Email
               </Link>
             </Button>
           </div>
         </div>
       </motion.section>
-
       {/* Footer */}
       <footer className="bg-slate-900 py-8 border-t border-purple-500">
         <div className="container mx-auto px-4 text-center text-slate-300">
           <p>© 2024 Anish Kumar Singh. All rights reserved.</p>
         </div>
       </footer>
-    </div>
-  )
+    </div>)
+  );
 }
