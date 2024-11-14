@@ -301,7 +301,7 @@ export default function Component() {
             Full-Stack Innovator
           </h1>
           <AnimatedText 
-            text="Crafting cutting-edge solutions at the intersection of AI, blockchain, and web technologies" 
+            text="Crafting cutting-edge solutions at the intersection of AI and web technologies" 
             className="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto"
           />
           <motion.div
