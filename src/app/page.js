@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import Head from "next/head";
 import { motion, useScroll, useTransform, useSpring, useAnimation, AnimatePresence } from "framer-motion"
 import { Github, Linkedin, Mail, ExternalLink, ChevronDown, Code, Briefcase, User, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -215,6 +216,60 @@ export default function Component() {
   }
 
   return (
+    <>
+  {/* SEO Meta Tags */}
+  <Head>
+        <title>Anish Kumar Singh | Full-Stack Developer | IIT (ISM) Dhanbad</title>
+        <meta
+          name="description"
+          content="Portfolio of Anish Kumar Singh, a Full-Stack Developer and student at IIT (ISM) Dhanbad. Discover projects like TheraWin, Alumni Portal, and SESE Website."
+        />
+        <meta
+          name="keywords"
+          content="Anish, Anish Singh, Anish Kumar Singh, Full-Stack Developer, MERN Stack, Next.js, IIT Dhanbad, ISM Dhanbad, Alumni Portal Developer, TheraWin AI Developer"
+        />
+        <meta property="og:title" content="Anish Kumar Singh | Full-Stack Developer | IIT (ISM) Dhanbad" />
+        <meta
+          property="og:description"
+          content="Explore the portfolio of Anish Kumar Singh, a Full-Stack Developer and AI enthusiast from IIT (ISM) Dhanbad."
+        />
+        <meta property="og:url" content="https://anish-portfolio.vercel.app/" />
+        <meta property="og:image" content="https://res.cloudinary.com/dcqgytpzz/image/upload/v1730562849/PROFILE_oarys0.jpg" />
+        <meta name="twitter:title" content="Anish Kumar Singh | Full-Stack Developer | IIT (ISM) Dhanbad" />
+        <meta
+          name="twitter:description"
+          content="Discover Anish's work, including TheraWin, Alumni Portal, and SESE Website, with expertise in AI and web technologies."
+        />
+        <meta name="twitter:image" content="https://res.cloudinary.com/dcqgytpzz/image/upload/v1730562849/PROFILE_oarys0.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Anish Kumar Singh",
+              "alternateName": ["Anish", "Anish Singh"],
+              "url": "https://anish-portfolio.vercel.app/",
+              "alumniOf": {
+                "@type": "CollegeOrUniversity",
+                "name": "IIT (ISM) Dhanbad",
+                "url": "https://www.iitism.ac.in/",
+              },
+              "jobTitle": "Full-Stack Developer",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "SESE Website",
+              },
+              "sameAs": [
+                "https://github.com/anishiit",
+                "https://www.linkedin.com/in/anish-kumar-singh-19091b25b/",
+                "mailto:anishsingh74850@gmail.com",
+              ],
+            }),
+          }}
+        />
+      </Head>
     <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-slate-100">
       <BackgroundAnimation />
       <ScrollIndicator />
@@ -517,5 +572,6 @@ export default function Component() {
         </div>
       </footer>
     </div>
+    </>
   )
 }
