@@ -38,7 +38,7 @@ const projects = [
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%20(361)-u4RG3NfZgcfvSZ0mHfx5htQ0Stk6gh.png",
     technologies: ["React", "Node.js", "MongoDB", "Express"],
     github: "https://github.com/anishiit/alumniportal",
-    demo: "https://aluminiportal.vercel.app/"
+    demo: "https://www.linklum.in/"
   },
   {
     title: "SESE Website",
