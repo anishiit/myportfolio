@@ -344,7 +344,7 @@ export default function Component() {
         >
           <div className="relative w-48 h-48 mx-auto mb-8">
             <Image
-              src="https://res.cloudinary.com/dcqgytpzz/image/upload/v1730562849/PROFILE_oarys0.jpg"
+              src="/anishImg.jpg"
               alt="Anish Kumar Singh"
               fill
               className="rounded-full object-cover border-4 border-purple-500"
