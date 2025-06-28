@@ -70,3 +70,8 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+}
