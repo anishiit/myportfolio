@@ -498,7 +498,7 @@ export default function Component() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4 text-lg text-slate-300">
               <p>
-                Hi, I’m <strong>Anish Kumar Singh</strong> (Anish), a final year B.Tech student in Environmental Engineering at <strong>IIT (ISM) Dhanbad</strong> and a passionate <strong>Full-Stack Developer</strong> specializing in the <strong>MERN stack</strong>, backend systems, and scalable web apps.
+                Hi, I’m <strong>Anish Kumar Singh</strong> (Anish), a final year B.Tech student at <strong>IIT (ISM) Dhanbad</strong> and a passionate <strong>Full-Stack Developer</strong> specializing in the <strong>MERN stack</strong>, backend systems, and scalable web apps.
               </p>
               <p>
                 With 10+ freelance projects, internships at <strong>Grull.work</strong> and <strong>TechMatrix Japan</strong>, and leadership as the <strong>Technical Head of Concetto’25</strong>, I focus on building MVPs and robust digital solutions for startups and organizations.
