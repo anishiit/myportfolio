@@ -13,7 +13,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Anish Kumar Singh's Portfolio",
+  title: "Anish Kumar Singh",
   description: "Anish Kumar Singh's portfolio website",
 };
 
